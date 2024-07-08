@@ -7,7 +7,7 @@ sed -i 's@^\(deb.*science stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.c
 pkg update -y && pkg upragde -y
 # 安装常用工具软件
 echo '******************** 开始安装常用工具 ********************';
-apt install vim vim-python git nmap wget curl htop python-pip -y
+pkg install vim vim-python git nmap wget curl htop python-pip -y
 # 解决vim汉字乱码
 echo "******************** 新建 ~/.vimrc 文件 增加配置 解决vim乱码问题 ********************"
 sleep 3
