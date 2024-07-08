@@ -11,6 +11,8 @@ apt install vim vim-python git nmap wget curl htop python-pip -y
 # 解决vim汉字乱码
 echo "******************** 新建 ~/.vimrc 文件 增加配置 解决vim乱码问题 ********************"
 sleep 3
+rm ~/.vimrc
+touch ~/.vimrc
 echo "set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1" >> ~/.vimrc
 echo "set enc=utf8" >> ~/.vimrc
 echo "set fencs=utf8,gbk,gb2312,gb18030" >> ~/.vimrc
