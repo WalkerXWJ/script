@@ -11,7 +11,9 @@
 ## [termux-init](./termux-init.sh)
 
 `termux-init.sh`termux 初次使用时的初始化脚本
+
 [reinit-ter](./reinit-ter.sh)个测试脚本使用文件
+
 ## [win-init](./win-init.bat)
 
 `win-init.bat` windows 初次使用时的初始化脚本
