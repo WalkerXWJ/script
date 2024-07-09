@@ -15,6 +15,7 @@ pkg install wget -y
 pkg install curl -y
 pkg install htop -y
 pkg install python-pip -y
+pkg install android-tools -y
 # 解决vim汉字乱码
 echo "******************** 新建 ~/.vimrc 文件 增加配置 解决vim乱码问题 ********************"
 sleep 3s
