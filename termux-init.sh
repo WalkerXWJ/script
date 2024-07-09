@@ -61,17 +61,17 @@ highlight "可使用 nohup mysqld & 将命令放在后台启动"
 sleep 3s
 nohup mysqld &
 ps aux|grep mysql
-highlight "登陆Termux 的用户名，默认密码为空"
-sleep 3s
-mysql -u $(whoami) && quit
-highlight "mariadb 修改root用户密码"
-mysql -u $(whoami)
-use mysql;
-set password for 'root'@'localhost' = password('toor8899toor');
-flush privileges;
-quit;
-highlight "root 密码 toor8899toor" 31 1
-highlight "使用 ： mysql -u root -p 命令来登陆root" 32 1
+# highlight "登陆Termux 的用户名，默认密码为空"
+# sleep 3s
+# mysql -u $(whoami) && quit
+# highlight "mariadb 修改root用户密码"
+# mysql -u $(whoami)
+# use mysql;
+# set password for 'root'@'localhost' = password('toor8899toor');
+# flush privileges;
+# quit;
+# highlight "root 密码 toor8899toor" 31 1
+# highlight "使用 ： mysql -u root -p 命令来登陆root" 32 1
 sleep 3s
 
 
