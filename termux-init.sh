@@ -38,7 +38,7 @@ source ~/.vimrc
 # 问候语修改 vim $PREFIX/etc/motd
 # 定义高亮函数
 highlight() {
-    local text=\$1
+    local text=$1
     local color=${2:-33}  # 默认颜色为黄色 (33)
     local style=${3:-1}   # 默认样式为粗体 (1)
 
@@ -65,7 +65,11 @@ highlight "登陆Termux 的用户名，默认密码为空"
 sleep 3s
 mysql -u $(whoami) && quit
 highlight "mariadb 修改root用户密码"
-mysql -u $(whoami) && use mysql; && set password for 'root'@'localhost' = password('toor8899toor');&& flush privileges;&& quit;
+mysql -u $(whoami)
+use mysql;
+set password for 'root'@'localhost' = password('toor8899toor');
+flush privileges;
+quit;
 highlight "root 密码 toor8899toor" 31 1
 highlight "使用 ： mysql -u root -p 命令来登陆root" 32 1
 sleep 3s
