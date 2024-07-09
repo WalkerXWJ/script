@@ -36,31 +36,38 @@ source ~/.vimrc
 #设置色彩样式：输入 chcolor 命令更换色彩样式，或者执行 ~/.termux/colors.sh 命令
 #设置字体：运行 chfont 命令更换字体，或者执行 ~/.termux/fonts.sh 命令
 # 问候语修改 vim $PREFIX/etc/motd
-function myEcho{
-  #固定样式文本输出
-  echo "**********************************************************"
-  echo "---------------  $1  ---------------"
-  echo "**********************************************************"
+# 定义高亮函数
+highlight() {
+    local text=\$1
+    local color=${2:-33}  # 默认颜色为黄色 (33)
+    local style=${3:-1}   # 默认样式为粗体 (1)
+
+    # ANSI 转义码
+    local start="\033[${style};${color}m"
+    local end="\033[0m"
+
+    # 输出高亮文本
+    echo -e "${start}${text}${end}"
 }
-myEcho "安装 MariaDB（mysql）"
-myEcho "MariaDB 是 MySQL 关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在 GNU GPL 下开源。开发这个分支的原因之一是：甲骨文公司收购了 MySQL 后，有将 MySQL 闭源的潜在风险，因此社区采用分支的方式来避开这个风险"
+highlight "安装 MariaDB（mysql）" 32 1
+highlight "MariaDB 是 MySQL 关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在 GNU GPL 下开源。开发这个分支的原因之一是：甲骨文公司收购了 MySQL 后，有将 MySQL 闭源的潜在风险，因此社区采用分支的方式来避开这个风险"
 cd /data/data/com.termux/files/usr/etc/
 mkdir my.cnf.d
 cd ~
 pkg install mariadb
 mysql --version
 mysql_install_db
-myEcho "可使用 nohup mysqld & 将命令放在后台启动"
+highlight "可使用 nohup mysqld & 将命令放在后台启动"
 sleep 3s
 nohup mysqld &
 ps aux|grep mysql
-myEcho "登陆Termux 的用户名，默认密码为空"
+highlight "登陆Termux 的用户名，默认密码为空"
 sleep 3s
 mysql -u $(whoami) && quit
-myEcho "mariadb 修改root用户密码"
+highlight "mariadb 修改root用户密码"
 mysql -u $(whoami) && use mysql; && set password for 'root'@'localhost' = password('toor8899toor');&& flush privileges;&& quit;
-myEcho "root 密码 toor8899toor"
-myEcho "使用 ： mysql -u root -p 命令来登陆root"
+highlight "root 密码 toor8899toor" 31 1
+highlight "使用 ： mysql -u root -p 命令来登陆root" 32 1
 
 
 echo '******************** 安装一些github项目 ********************';
