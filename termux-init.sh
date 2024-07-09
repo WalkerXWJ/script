@@ -68,6 +68,7 @@ highlight "mariadb 修改root用户密码"
 mysql -u $(whoami) && use mysql; && set password for 'root'@'localhost' = password('toor8899toor');&& flush privileges;&& quit;
 highlight "root 密码 toor8899toor" 31 1
 highlight "使用 ： mysql -u root -p 命令来登陆root" 32 1
+sleep 3s
 
 
 echo '******************** 安装一些github项目 ********************';
