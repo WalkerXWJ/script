@@ -35,7 +35,7 @@ source ~/.vimrc
 #设置色彩样式：输入 chcolor 命令更换色彩样式，或者执行 ~/.termux/colors.sh 命令
 #设置字体：运行 chfont 命令更换字体，或者执行 ~/.termux/fonts.sh 命令
 # 问候语修改 vim $PREFIX/etc/motd
-function myEcho(parameter) {
+function myEcho{
   #固定样式文本输出
   param = $1
   echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
