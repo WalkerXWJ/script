@@ -12,7 +12,7 @@
 
 `termux-init.sh`termux 初次使用时的初始化脚本
 
-[reinit-ter](./reinit-ter.sh) 是作者测试脚本使用文件
+[reinit-ter](./reinit-ter.sh) 测试脚本使用文件
 
 ## [win-init](./win-init.bat)
 
